@@ -53,6 +53,20 @@ const App: React.FC = () => {
     return new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   };
 
+  const generateWithRetry = async (model: string, contents: any, config: any = {}, retries = 3) => {
+    const ai = getAI();
+    for (let i = 0; i < retries; i++) {
+        try {
+            return await ai.models.generateContent({ model, contents, config });
+        } catch (e) {
+            if (i === retries - 1) throw e;
+            console.warn(`Attempt ${i + 1} failed, retrying...`, e);
+            await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)));
+        }
+    }
+    throw new Error("Retry failed"); // Should not be reached
+  };
+
   const handleAPIError = (e: any) => {
     const msg = String(e);
     console.error("API Error:", msg);
@@ -178,8 +192,7 @@ OUTPUT STRICT JSON ONLY (No markdown formatting):
 }
 `;
     try {
-        const ai = getAI();
-        const res = await ai.models.generateContent({ model: MODEL_TEXT_NAME, contents: prompt, config: { responseMimeType: 'application/json' } });
+        const res = await generateWithRetry(MODEL_TEXT_NAME, prompt, { responseMimeType: 'application/json' });
         let rawText = res.text || "{}";
         rawText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
         
@@ -207,13 +220,12 @@ OUTPUT STRICT JSON ONLY (No markdown formatting):
   const generatePersona = async (desc: string): Promise<Persona> => {
       const style = selectedGenre === 'Custom' ? "Modern American comic book art" : `${selectedGenre} comic`;
       try {
-          const ai = getAI();
-          const res = await ai.models.generateContent({
-              model: MODEL_IMAGE_GEN_NAME,
-              contents: { text: `STYLE: Masterpiece ${style} character sheet, detailed ink, neutral background. FULL BODY. Character: ${desc}` },
-              config: { imageConfig: { aspectRatio: '1:1' } }
-          });
-          const part = res.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+          const res = await generateWithRetry(
+              MODEL_IMAGE_GEN_NAME,
+              { text: `STYLE: Masterpiece ${style} character sheet, detailed ink, neutral background. FULL BODY. Character: ${desc}` },
+              { imageConfig: { aspectRatio: '1:1' } }
+          );
+          const part = res.candidates?.[0]?.content?.parts?.find((p: any) => p.inlineData);
           if (part?.inlineData?.data) return { base64: part.inlineData.data, desc };
           throw new Error("Failed");
       } catch (e) { 
@@ -252,13 +264,12 @@ OUTPUT STRICT JSON ONLY (No markdown formatting):
     contents.push({ text: promptText });
 
     try {
-        const ai = getAI();
-        const res = await ai.models.generateContent({
-          model: MODEL_IMAGE_GEN_NAME,
-          contents: contents,
-          config: { imageConfig: { aspectRatio: '2:3' } }
-        });
-        const part = res.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+        const res = await generateWithRetry(
+          MODEL_IMAGE_GEN_NAME,
+          contents,
+          { imageConfig: { aspectRatio: '2:3' } }
+        );
+        const part = res.candidates?.[0]?.content?.parts?.find((p: any) => p.inlineData);
         return part?.inlineData?.data ? `data:${part.inlineData.mimeType};base64,${part.inlineData.data}` : '';
     } catch (e) { 
         handleAPIError(e);
