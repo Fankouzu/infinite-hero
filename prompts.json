@@ -1,0 +1,240 @@
+[{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：漫画封面。标题：“无限英雄”（或中国（中国）的本地化翻译）。主视觉：[英雄]的动态动作镜头（使用参考 1）。"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "\n你正在写一个漫画脚本。第 1 页，共 10 页。\n目标文本语言：中文（中国）（关键：旁白、对话、选项必须使用此语言）。\n类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n\n角色：\n- 英雄：活跃。\n- 配角：活跃且在场（用户提供）。强制：本画格聚焦于配角。\n\n前情提要（仔细阅读）：\n开始冒险。\n\n规则：\n1. 禁止重复。不要使用前几页相同的旁白或对话。\n2. 如果配角活跃，他们必须频繁出现。\n3. 多样性。如果第 0 页是动作镜头，这一页就做成反应镜头或广角镜头。\n4. 语言：所有面向用户的文本必须是中文（中国）。\n5. 避免在文本旁白中说“配角”和“英雄”。如果已确立名字则使用名字，或使用通用描述符。\n\n指令：继续故事。所有输出文本（旁白、对话、选项）必须是中文（中国）。类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n    负面约束：\n    1. 除非类型是“黑暗科幻”或“超级英雄动作”或“自定义”：否则不要使用“量子”、“时间线”、“传送门”、“多元宇宙”或“奇点”等技术术语。\n    2. 如果类型是“青少年剧”或“轻松喜剧”：“赌注”必须是社交、情感或个人的（例如，谣言、比赛、违背承诺、迟到、让自己尴尬）。不要搞成生死攸关。保持接地气。\n    3. 除非之前已确立，否则避免使用“神器”或“设备”。\n     丰富/小说模式已启用。优先考虑更深层次的角色思想、描述性旁白和有意义的对话交流，而不是简短的俏皮话。激励事件。一个事件打破了现状。确立类型的预期情绪。（如果是生活片段：社交障碍/惊喜。如果是冒险：行动号召）。\n\n仅输出严格的 JSON（无 markdown 格式）：\n{\n  \"caption\": \"中文（中国）的独特旁白文本。（最多 35 个字。详细的叙述或内心独白）。\",\n  \"dialogue\": \"中文（中国）的独特对话。（最多 30 个字。丰富、角色驱动的演讲）。可选。\",\n  \"scene\": \"生动的视觉描述（始终为艺术家模型使用英语）。如果'英雄'或'配角'在场，必须提及。\",\n  \"focus_char\": \"hero\" OR \"friend\" OR \"other\",\n  \"choices\": [\"中文（中国）的选项 A\", \"中文（中国）的选项 B\"] (仅在决策页面)\n}\n"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "responseMimeType": "application/json"
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：垂直漫画画格。场景：第四区混乱、雨水浸透的未来夜市。霓虹灯在湿润的路面上反射。配角在正前方，本能地护住脸并伸手去拿武器，一个穿着合成皮革的暴徒撞碎了他们旁边的平板玻璃店面窗户，碎片四溅。英雄在中景可见，已经拔枪。。指令：保持严格的角色相似度。如果场景提到“英雄”，你必须使用参考 1。如果场景提到“配角”或“助手”，你必须使用参考 2。包含旁白框：“这座城市从不入睡，它只是在蛰伏，等待着下一声尖叫。霓虹灯无法照亮最深处的阴影，而今晚，麻烦像那场永不停歇的酸雨一样，毫无征兆地砸向了我们。”包含对话气泡：““见鬼！趴下！””"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "\n你正在写一个漫画脚本。第 2 页，共 10 页。\n目标文本语言：中文（中国）（关键：旁白、对话、选项必须使用此语言）。\n类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n\n角色：\n- 英雄：活跃。\n- 配角：活跃且在场（用户提供）。确保他们融入场景，即使不是主要焦点。\n\n前情提要（仔细阅读）：\n[第 1 页] [焦点：朋友] (旁白: \"这座城市从不入睡，它只是在蛰伏，等待着下一声尖叫。霓虹灯无法照亮最深处的阴影，而今晚，麻烦像那场永不停歇的酸雨一样，毫无征兆地砸向了我们。\") (对话: \"“见鬼！趴下！”\") (场景: A chaotic, rain-soaked futuristic night market in Sector 4. Neon signs reflect off wet pavement. The CO-STAR is front and center, reflexively shielding their face and reaching for a weapon as a thug in synth-leather crashes through a plate glass storefront window right next to them in a shower of shards. The HERO is visible in the mid-ground, already drawing their gun.) \n\n规则：\n1. 禁止重复。不要使用前几页相同的旁白或对话。\n2. 如果配角活跃，他们必须频繁出现。\n3. 多样性。如果第 1 页是动作镜头，这一页就做成反应镜头或广角镜头。\n4. 语言：所有面向用户的文本必须是中文（中国）。\n5. 避免在文本旁白中说“配角”和“英雄”。如果已确立名字则使用名字，或使用通用描述符。\n\n指令：继续故事。所有输出文本（旁白、对话、选项）必须是中文（中国）。类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n    负面约束：\n    1. 除非类型是“黑暗科幻”或“超级英雄动作”或“自定义”：否则不要使用“量子”、“时间线”、“传送门”、“多元宇宙”或“奇点”等技术术语。\n    2. 如果类型是“青少年剧”或“轻松喜剧”：“赌注”必须是社交、情感或个人的（例如，谣言、比赛、违背承诺、迟到、让自己尴尬）。不要搞成生死攸关。保持接地气。\n    3. 除非之前已确立，否则避免使用“神器”或“设备”。\n     丰富/小说模式已启用。优先考虑更深层次的角色思想、描述性旁白和有意义的对话交流，而不是简短的俏皮话。上升动作。英雄们参与新情况。专注于对话、角色动态和最初的挑战。\n\n仅输出严格的 JSON（无 markdown 格式）：\n{\n  \"caption\": \"中文（中国）的独特旁白文本。（最多 35 个字。详细的叙述或内心独白）。\",\n  \"dialogue\": \"中文（中国）的独特对话。（最多 30 个字。丰富、角色驱动的演讲）。可选。\",\n  \"scene\": \"生动的视觉描述（始终为艺术家模型使用英语）。如果'英雄'或'配角'在场，必须提及。\",\n  \"focus_char\": \"hero\" OR \"friend\" OR \"other\",\n  \"choices\": [\"中文（中国）的选项 A\", \"中文（中国）的选项 B\"] (仅在决策页面)\n}\n"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "responseMimeType": "application/json"
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：垂直漫画画格。场景：撞击后混乱市场的广角镜头。英雄和配角正躲在一个翻倒的、冒着热气的合成面条摊后面，拔出武器准备战斗。那个从窗户掉进来的暴徒正躺在满是玻璃的地面上呻吟，周围散落着商品。在外面，透过破碎的店面洞口，三个武装人员的轮廓在雨水浸透的霓虹灯下清晰可见，正举着重型武器向内瞄准。。指令：保持严格的角色相似度。如果场景提到“英雄”，你必须使用参考 1。如果场景提到“配角”或“助手”，你必须使用参考 2。包含旁白框：“破碎的霓虹与玻璃在我们周围炸裂，空气中弥漫着臭氧和廉价合成皮焦味。这不仅仅是一次随机袭击，这是一次精心策划的伏击，而我们正处于风暴中心。”包含对话气泡：““不止一个！街对面还有三个目标，他们带了重武器！”\n英雄：“找掩护！别管地上那个倒霉蛋了，盯住外围！””"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "\n你正在写一个漫画脚本。第 3 页，共 10 页。\n目标文本语言：中文（中国）（关键：旁白、对话、选项必须使用此语言）。\n类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n\n角色：\n- 英雄：活跃。\n- 配角：活跃且在场（用户提供）。强制：本画格聚焦于配角。\n\n前情提要（仔细阅读）：\n[第 1 页] [焦点：朋友] (旁白: \"这座城市从不入睡，它只是在蛰伏，等待着下一声尖叫。霓虹灯无法照亮最深处的阴影，而今晚，麻烦像那场永不停歇的酸雨一样，毫无征兆地砸向了我们。\") (对话: \"“见鬼！趴下！”\") (场景: A chaotic, rain-soaked futuristic night market in Sector 4. Neon signs reflect off wet pavement. The CO-STAR is front and center, reflexively shielding their face and reaching for a weapon as a thug in synth-leather crashes through a plate glass storefront window right next to them in a shower of shards. The HERO is visible in the mid-ground, already drawing their gun.) \n[第 2 页] [焦点：英雄] (旁白: \"破碎的霓虹与玻璃在我们周围炸裂，空气中弥漫着臭氧和廉价合成皮焦味。这不仅仅是一次随机袭击，这是一次精心策划的伏击，而我们正处于风暴中心。\") (对话: \"“不止一个！街对面还有三个目标，他们带了重武器！”\n英雄: “找掩护！别管地上那个倒霉蛋了，盯住外围！”\") (场景: A wide angle shot of the chaotic market immediately after the crash. The HERO and CO-STAR are scrambling behind an overturned, steaming synth-noodle stall, weapons drawn and ready. The thug who fell through the window is groaning on the glass-covered ground amidst scattered merchandise. Outside, through the broken storefront hole, silhouettes of three more armed figures are visible against the rain-slicked neon lights, aiming heavy weapons inward.) \n\n规则：\n1. 禁止重复。不要使用前几页相同的旁白或对话。\n2. 如果配角活跃，他们必须频繁出现。\n3. 多样性。如果第 2 页是动作镜头，这一页就做成反应镜头或广角镜头。\n4. 语言：所有面向用户的文本必须是中文（中国）。\n5. 避免在文本旁白中说“配角”和“英雄”。如果已确立名字则使用名字，或使用通用描述符。\n\n指令：继续故事。所有输出文本（旁白、对话、选项）必须是中文（中国）。类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n    负面约束：\n    1. 除非类型是“黑暗科幻”或“超级英雄动作”或“自定义”：否则不要使用“量子”、“时间线”、“传送门”、“多元宇宙”或“奇点”等技术术语。\n    2. 如果类型是“青少年剧”或“轻松喜剧”：“赌注”必须是社交、情感或个人的（例如，谣言、比赛、违背承诺、迟到、让自己尴尬）。不要搞成生死攸关。保持接地气。\n    3. 除非之前已确立，否则避免使用“神器”或“设备”。\n     丰富/小说模式已启用。优先考虑更深层次的角色思想、描述性旁白和有意义的对话交流，而不是简短的俏皮话。以关于价值观、关系或风险的心理选择结束。（例如，真相与安全，宽恕与复仇）。选项绝不能是简单的物理动作，如“向左走”。\n\n仅输出严格的 JSON（无 markdown 格式）：\n{\n  \"caption\": \"中文（中国）的独特旁白文本。（最多 35 个字。详细的叙述或内心独白）。\",\n  \"dialogue\": \"中文（中国）的独特对话。（最多 30 个字。丰富、角色驱动的演讲）。可选。\",\n  \"scene\": \"生动的视觉描述（始终为艺术家模型使用英语）。如果'英雄'或'配角'在场，必须提及。\",\n  \"focus_char\": \"hero\" OR \"friend\" OR \"other\",\n  \"choices\": [\"中文（中国）的选项 A\", \"中文（中国）的选项 B\"] (仅在决策页面)\n}\n"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "responseMimeType": "application/json"
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：垂直漫画画格。场景：紧凑、动感的镜头聚焦于配角从翻倒的合成面条摊后探出身子，疯狂开火。枪口闪光照亮了雨水和废墟中升起的蒸汽。敌人的重型子弹击打着他们的掩体，碎片和火花在他们周围爆炸。英雄就在他们身后可见，准备进行下一步行动。。指令：保持严格的角色相似度。如果场景提到“英雄”，你必须使用参考 1。如果场景提到“配角”或“助手”，你必须使用参考 2。包含旁白框：“没时间犹豫。我的搭档在枪林弹雨中展现出一种令人胆寒的冷静。在破碎的霓虹灯光下，我看到了他们眼中的决绝，那是比手中武器更致命的东西。”包含对话气泡：““压制住左侧！别让他们包抄过来，我来制造突破口！””"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "\n你正在写一个漫画脚本。第 4 页，共 10 页。\n目标文本语言：中文（中国）（关键：旁白、对话、选项必须使用此语言）。\n类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n\n角色：\n- 英雄：活跃。\n- 配角：活跃且在场（用户提供）。确保他们融入场景，即使不是主要焦点。\n\n前情提要（仔细阅读）：\n[第 1 页] [焦点：朋友] (旁白: \"这座城市从不入睡，它只是在蛰伏，等待着下一声尖叫。霓虹灯无法照亮最深处的阴影，而今晚，麻烦像那场永不停歇的酸雨一样，毫无征兆地砸向了我们。\") (对话: \"“见鬼！趴下！”\") (场景: A chaotic, rain-soaked futuristic night market in Sector 4. Neon signs reflect off wet pavement. The CO-STAR is front and center, reflexively shielding their face and reaching for a weapon as a thug in synth-leather crashes through a plate glass storefront window right next to them in a shower of shards. The HERO is visible in the mid-ground, already drawing their gun.) \n[第 2 页] [焦点：英雄] (旁白: \"破碎的霓虹与玻璃在我们周围炸裂，空气中弥漫着臭氧和廉价合成皮焦味。这不仅仅是一次随机袭击，这是一次精心策划的伏击，而我们正处于风暴中心。\") (对话: \"“不止一个！街对面还有三个目标，他们带了重武器！”\n英雄: “找掩护！别管地上那个倒霉蛋了，盯住外围！”\") (场景: A wide angle shot of the chaotic market immediately after the crash. The HERO and CO-STAR are scrambling behind an overturned, steaming synth-noodle stall, weapons drawn and ready. The thug who fell through the window is groaning on the glass-covered ground amidst scattered merchandise. Outside, through the broken storefront hole, silhouettes of three more armed figures are visible against the rain-slicked neon lights, aiming heavy weapons inward.) \n[第 3 页] [焦点：朋友] (旁白: \"没时间犹豫。我的搭档在枪林弹雨中展现出一种令人胆寒的冷静。在破碎的霓虹灯光下，我看到了他们眼中的决绝，那是比手中武器更致命的东西。\") (对话: \"“压制住左侧！别让他们包抄过来，我来制造突破口！”\") (场景: A tight, kinetic shot focused on the CO-STAR leaning out from behind the overturned synth-noodle stall, firing their weapon wildly. Muzzle flashes illuminate the rain and steam rising from the ruined stall. Debris and sparks explode around them as enemy heavy rounds hammer their cover. The HERO is visible just behind them, bracing for the next move.) \n\n规则：\n1. 禁止重复。不要使用前几页相同的旁白或对话。\n2. 如果配角活跃，他们必须频繁出现。\n3. 多样性。如果第 3 页是动作镜头，这一页就做成反应镜头或广角镜头。\n4. 语言：所有面向用户的文本必须是中文（中国）。\n5. 避免在文本旁白中说“配角”和“英雄”。如果已确立名字则使用名字，或使用通用描述符。\n\n指令：继续故事。所有输出文本（旁白、对话、选项）必须是中文（中国）。类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n    负面约束：\n    1. 除非类型是“黑暗科幻”或“超级英雄动作”或“自定义”：否则不要使用“量子”、“时间线”、“传送门”、“多元宇宙”或“奇点”等技术术语。\n    2. 如果类型是“青少年剧”或“轻松喜剧”：“赌注”必须是社交、情感或个人的（例如，谣言、比赛、违背承诺、迟到、让自己尴尬）。不要搞成生死攸关。保持接地气。\n    3. 除非之前已确立，否则避免使用“神器”或“设备”。\n     丰富/小说模式已启用。优先考虑更深层次的角色思想、描述性旁白和有意义的对话交流，而不是简短的俏皮话。上升动作。英雄们参与新情况。专注于对话、角色动态和最初的挑战。\n\n仅输出严格的 JSON（无 markdown 格式）：\n{\n  \"caption\": \"中文（中国）的独特旁白文本。（最多 35 个字。详细的叙述或内心独白）。\",\n  \"dialogue\": \"中文（中国）的独特对话。（最多 30 个字。丰富、角色驱动的演讲）。可选。\",\n  \"scene\": \"生动的视觉描述（始终为艺术家模型使用英语）。如果'英雄'或'配角'在场，必须提及。\",\n  \"focus_char\": \"hero\" OR \"friend\" OR \"other\",\n  \"choices\": [\"中文（中国）的选项 A\", \"中文（中国）的选项 B\"] (仅在决策页面)\n}\n"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "responseMimeType": "application/json"
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：垂直漫画画格。场景：混乱交火的中广角镜头。英雄和配角蜷缩在迅速解体的合成面条摊后面。街对面的重机枪火力撕裂了邻近的摊位，霓虹灯管、合成食物和雨水在火花和碎片的阵雨中爆炸。英雄冷酷地检查武器的弹药计数器，而配角则疯狂地重新装弹，在震耳欲聋的噪音中大喊。街道上湿滑的雨水和碎玻璃反射着猛烈的枪火闪光。。指令：保持严格的角色相似度。如果场景提到“英雄”，你必须使用参考 1。如果场景提到“配角”或“助手”，你必须使用参考 2。包含旁白框：“空气中弥漫着烧焦的臭氧和绝望的味道。对面的重火力正在把这片繁华的市场变成一个绞肉机。我们被死死压制在掩体后，就像两只被困在霓虹牢笼里的老鼠，等待着命运的审判。”包含对话气泡：““弹匣空了！该死，他们火力太猛，这破面摊撑不了多久了！”\n英雄：“省着点子弹！看到右边那条暗巷了吗？我数到三，我们冲过去重组防线。””"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "\n你正在写一个漫画脚本。第 5 页，共 10 页。\n目标文本语言：中文（中国）（关键：旁白、对话、选项必须使用此语言）。\n类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n\n角色：\n- 英雄：活跃。\n- 配角：活跃且在场（用户提供）。强制：本画格聚焦于配角。\n\n前情提要（仔细阅读）：\n[第 1 页] [焦点：朋友] (旁白: \"这座城市从不入睡，它只是在蛰伏，等待着下一声尖叫。霓虹灯无法照亮最深处的阴影，而今晚，麻烦像那场永不停歇的酸雨一样，毫无征兆地砸向了我们。\") (对话: \"“见鬼！趴下！”\") (场景: A chaotic, rain-soaked futuristic night market in Sector 4. Neon signs reflect off wet pavement. The CO-STAR is front and center, reflexively shielding their face and reaching for a weapon as a thug in synth-leather crashes through a plate glass storefront window right next to them in a shower of shards. The HERO is visible in the mid-ground, already drawing their gun.) \n[第 2 页] [焦点：英雄] (旁白: \"破碎的霓虹与玻璃在我们周围炸裂，空气中弥漫着臭氧和廉价合成皮焦味。这不仅仅是一次随机袭击，这是一次精心策划的伏击，而我们正处于风暴中心。\") (对话: \"“不止一个！街对面还有三个目标，他们带了重武器！”\n英雄: “找掩护！别管地上那个倒霉蛋了，盯住外围！”\") (场景: A wide angle shot of the chaotic market immediately after the crash. The HERO and CO-STAR are scrambling behind an overturned, steaming synth-noodle stall, weapons drawn and ready. The thug who fell through the window is groaning on the glass-covered ground amidst scattered merchandise. Outside, through the broken storefront hole, silhouettes of three more armed figures are visible against the rain-slicked neon lights, aiming heavy weapons inward.) \n[第 3 页] [焦点：朋友] (旁白: \"没时间犹豫。我的搭档在枪林弹雨中展现出一种令人胆寒的冷静。在破碎的霓虹灯光下，我看到了他们眼中的决绝，那是比手中武器更致命的东西。\") (对话: \"“压制住左侧！别让他们包抄过来，我来制造突破口！”\") (场景: A tight, kinetic shot focused on the CO-STAR leaning out from behind the overturned synth-noodle stall, firing their weapon wildly. Muzzle flashes illuminate the rain and steam rising from the ruined stall. Debris and sparks explode around them as enemy heavy rounds hammer their cover. The HERO is visible just behind them, bracing for the next move.) \n[第 4 页] [焦点：英雄] (旁白: \"空气中弥漫着烧焦的臭氧和绝望的味道。对面的重火力正在把这片繁华的市场变成一个绞肉机。我们被死死压制在掩体后，就像两只被困在霓虹牢笼里的老鼠，等待着命运的审判。\") (对话: \"“弹匣空了！该死，他们火力太猛，这破面摊撑不了多久了！”\n英雄: “省着点子弹！看到右边那条暗巷了吗？我数到三，我们冲过去重组防线。”\") (场景: A medium-wide shot of the chaotic firefight. The HERO and CO-STAR are huddled behind the rapidly disintegrating synth-noodle stall. Heavy machine gun fire from across the street tears through neighboring stalls, sending neon tubes, synthetic food, and rain exploding in showers of sparks and debris. The HERO grimly checks their weapon's ammunition counter, while the CO-STAR frantically reloads, shouting over the deafening noise. The street is slick with rain and broken glass reflecting the violent flashes of gunfire.) \n\n规则：\n1. 禁止重复。不要使用前几页相同的旁白或对话。\n2. 如果配角活跃，他们必须频繁出现。\n3. 多样性。如果第 4 页是动作镜头，这一页就做成反应镜头或广角镜头。\n4. 语言：所有面向用户的文本必须是中文（中国）。\n5. 避免在文本旁白中说“配角”和“英雄”。如果已确立名字则使用名字，或使用通用描述符。\n\n指令：继续故事。所有输出文本（旁白、对话、选项）必须是中文（中国）。类型：霓虹黑色侦探。基调：动作密集（简短有力的对话。注重动态感）。\n    负面约束：\n    1. 除非类型是“黑暗科幻”或“超级英雄动作”或“自定义”：否则不要使用“量子”、“时间线”、“传送门”、“多元宇宙”或“奇点”等技术术语。\n    2. 如果类型是“青少年剧”或“轻松喜剧”：“赌注”必须是社交、情感或个人的（例如，谣言、比赛、违背承诺、迟到、让自己尴尬）。不要搞成生死攸关。保持接地气。\n    3. 除非之前已确立，否则避免使用“神器”或“设备”。\n     丰富/小说模式已启用。优先考虑更深层次的角色思想、描述性旁白和有意义的对话交流，而不是简短的俏皮话。复杂化。发生转折！秘密被揭露，误解加深，或者道路被阻挡。（保持强度适合类型 - 例如喜剧的社交尴尬，恐怖的危险）。\n\n仅输出严格的 JSON（无 markdown 格式）：\n{\n  \"caption\": \"中文（中国）的独特旁白文本。（最多 35 个字。详细的叙述或内心独白）。\",\n  \"dialogue\": \"中文（中国）的独特对话。（最多 30 个字。丰富、角色驱动的演讲）。可选。\",\n  \"scene\": \"生动的视觉描述（始终为艺术家模型使用英语）。如果'英雄'或'配角'在场，必须提及。\",\n  \"focus_char\": \"hero\" OR \"friend\" OR \"other\",\n  \"choices\": [\"中文（中国）的选项 A\", \"中文（中国）的选项 B\"] (仅在决策页面)\n}\n"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "responseMimeType": "application/json"
+    }
+},{
+    "contents": [
+        {
+            "parts": [
+                {
+                    "text": "参考 1 [英雄]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "参考 2 [配角]:"
+                },
+                {
+                    "inlineData": {}
+                },
+                {
+                    "text": "风格：霓虹黑色侦探漫画艺术，详细的墨水，鲜艳的色彩。类型：垂直漫画画格。场景：动态、动感的跟踪镜头。英雄和配角正拼命跑离爆炸的面条摊，溅起雨水浸透的碎片。配角领先，但猛烈地滑行停下，在湿滑的路面上滑动，脸上露出震惊的表情。一个巨大的、全副武装的轮廓，带着发光的红色光学传感器，从他们跑向的小巷阴影中走出，举着一把大霰弹枪挡住了他们唯一的逃生路线。雨水在霓虹灯照亮的画面中水平划过。。指令：保持严格的角色相似度。如果场景提到“英雄”，你必须使用参考 1。如果场景提到“配角”或“助手”，你必须使用参考 2。包含旁白框：““三”的余音未落，我们已冲入死亡的暴雨。我的搭档快如闪电，直奔生路。但命运在巷口开了个残酷的玩笑：那不是出口，而是另一个陷阱的咽喉。”包含对话气泡：““跑！别回头！”\n配角：“该死！巷口被封锁了！有埋伏，退回去！””"
+                }
+            ],
+            "role": "user"
+        }
+    ],
+    "generationConfig": {
+        "imageConfig": {
+            "aspectRatio": "2:3"
+        }
+    }
+}
+]
