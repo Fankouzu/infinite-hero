@@ -12,6 +12,7 @@ import { Setup } from './Setup';
 import { Book } from './Book';
 import { useApiKey } from './useApiKey';
 import { ApiKeyDialog } from './ApiKeyDialog';
+import { getPrompt } from './src/utils/PromptLoader';
 
 // --- Constants ---
 const MODEL_V3 = "gemini-3-pro-image-preview";
@@ -161,36 +162,18 @@ const App: React.FC = () => {
     const capLimit = richMode ? "max 35 words. Detailed narration or internal monologue" : "max 15 words";
     const diaLimit = richMode ? "max 30 words. Rich, character-driven speech" : "max 12 words";
 
-    const prompt = `
-You are writing a comic book script. PAGE ${pageNum} of ${MAX_STORY_PAGES}.
-TARGET LANGUAGE FOR TEXT: ${langName} (CRITICAL: CAPTIONS, DIALOGUE, CHOICES MUST BE IN THIS LANGUAGE).
-${coreDriver}
-
-CHARACTERS:
-- HERO: Active.
-- CO-STAR: ${friendInstruction}
-
-PREVIOUS PANELS (READ CAREFULLY):
-${historyText.length > 0 ? historyText : "Start the adventure."}
-
-RULES:
-1. NO REPETITION. Do not use the same captions or dialogue from previous pages.
-2. IF CO-STAR IS ACTIVE, THEY MUST APPEAR FREQUENTLY.
-3. VARIETY. If page ${pageNum-1} was an action shot, make this one a reaction or wide shot.
-4. LANGUAGE: All user-facing text MUST be in ${langName}.
-5. Avoid saying "CO-star" and "hero" in the text captions. Use names if established, or generic descriptors.
-
-INSTRUCTION: ${instruction}
-
-OUTPUT STRICT JSON ONLY (No markdown formatting):
-{
-  "caption": "Unique narrator text in ${langName}. (${capLimit}).",
-  "dialogue": "Unique speech in ${langName}. (${diaLimit}). Optional.",
-  "scene": "Vivid visual description (ALWAYS IN ENGLISH for the artist model). MUST mention 'HERO' or 'CO-STAR' if they are present.",
-  "focus_char": "hero" OR "friend" OR "other",
-  "choices": ["Option A in ${langName}", "Option B in ${langName}"] (Only if decision page)
-}
-`;
+    const prompt = getPrompt('beat_generation', {
+        pageNum,
+        maxPages: MAX_STORY_PAGES,
+        langName,
+        coreDriver,
+        friendInstruction,
+        historyText: historyText.length > 0 ? historyText : "Start the adventure.",
+        prevPageNum: pageNum - 1,
+        instruction,
+        capLimit,
+        diaLimit
+    });
     try {
         const res = await generateWithRetry(MODEL_TEXT_NAME, prompt, { responseMimeType: 'application/json' });
         let rawText = res.text || "{}";
