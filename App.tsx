@@ -371,6 +371,23 @@ const App: React.FC = () => {
       }
   }
 
+  const regeneratePage = async (pageIndex: number) => {
+      if (generatingPages.current.has(pageIndex)) return; // Prevent duplicate generation
+      
+      const faceId = `page-${pageIndex}`;
+      const type: ComicFace['type'] = pageIndex === BACK_COVER_PAGE ? 'back_cover' : 'story';
+      
+      // Reset page to loading state
+      updateFaceState(faceId, { isLoading: true, imageUrl: undefined });
+      generatingPages.current.add(pageIndex);
+      
+      try {
+          await generateSinglePage(faceId, pageIndex, type);
+      } finally {
+          generatingPages.current.delete(pageIndex);
+      }
+  }
+
   const resetApp = () => {
       setIsStarted(false);
       setShowSetup(true);
@@ -438,6 +455,7 @@ const App: React.FC = () => {
           isSetupVisible={showSetup && !isTransitioning}
           onSheetClick={handleSheetClick}
           onChoice={handleChoice}
+          onRegeneratePage={regeneratePage}
           onOpenBook={() => setCurrentSheetIndex(1)}
           onDownload={downloadPDF}
           onReset={resetApp}

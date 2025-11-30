@@ -11,12 +11,13 @@ interface PanelProps {
     face?: ComicFace;
     allFaces: ComicFace[]; // Needed for cover "printing" status
     onChoice: (pageIndex: number, choice: string) => void;
+    onRegeneratePage: (pageIndex: number) => void;
     onOpenBook: () => void;
     onDownload: () => void;
     onReset: () => void;
 }
 
-export const Panel: React.FC<PanelProps> = ({ face, allFaces, onChoice, onOpenBook, onDownload, onReset }) => {
+export const Panel: React.FC<PanelProps> = ({ face, allFaces, onChoice, onRegeneratePage, onOpenBook, onDownload, onReset }) => {
     if (!face) return <div className="w-full h-full bg-gray-950" />;
     if (face.isLoading && !face.imageUrl) return <LoadingFX />;
     
@@ -26,6 +27,20 @@ export const Panel: React.FC<PanelProps> = ({ face, allFaces, onChoice, onOpenBo
         <div className={`panel-container relative group ${isFullBleed ? '!p-0 !bg-[#0a0a0a]' : ''}`}>
             <div className="gloss"></div>
             {face.imageUrl && <img src={face.imageUrl} alt="Comic panel" className={`panel-image ${isFullBleed ? '!object-cover' : ''}`} />}
+            
+            {/* Refresh Button - Only for story pages */}
+            {face.type === 'story' && face.pageIndex && (
+                <button 
+                    onClick={(e) => { 
+                        e.stopPropagation(); 
+                        onRegeneratePage(face.pageIndex!); 
+                    }}
+                    className="absolute bottom-4 right-4 z-30 comic-btn bg-orange-400 hover:bg-orange-300 px-3 py-2 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    title="重新生成此页"
+                >
+                    ↻
+                </button>
+            )}
             
             {/* Decision Buttons */}
             {face.isDecisionPage && face.choices.length > 0 && (
