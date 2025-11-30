@@ -241,7 +241,7 @@ const App: React.FC = () => {
       }
   };
 
-  const generateImage = async (beat: Beat, type: ComicFace['type']): Promise<string> => {
+  const generateImage = async (beat: Beat, type: ComicFace['type'], premise?: string): Promise<string> => {
     const contents = [];
     if (heroRef.current?.base64) {
         contents.push({ text: "REFERENCE 1 [HERO]:" });
@@ -252,7 +252,9 @@ const App: React.FC = () => {
         contents.push({ inlineData: { mimeType: 'image/jpeg', data: friendRef.current.base64 } });
     }
 
-    const styleEra = selectedGenre === 'Custom' ? "Modern American" : selectedGenre;
+    const styleEra = selectedGenre === 'Custom' && premise 
+      ? premise 
+      : (selectedGenre === 'Custom' ? "Modern American" : selectedGenre);
     let promptText = `STYLE: ${styleEra} comic book art, detailed ink, vibrant colors. `;
     
     if (type === 'cover') {
@@ -310,7 +312,7 @@ const App: React.FC = () => {
       }
 
       updateFaceState(faceId, { narrative: beat, choices: beat.choices, isDecisionPage: isDecision });
-      const url = await generateImage(beat, type);
+      const url = await generateImage(beat, type, selectedGenre === 'Custom' ? customPremise : undefined);
       updateFaceState(faceId, { imageUrl: url, isLoading: false });
   };
 
