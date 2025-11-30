@@ -89,7 +89,7 @@ const App: React.FC = () => {
     });
   };
 
-  const generateBeat = async (history: ComicFace[], isRightPage: boolean, pageNum: number, isDecisionPage: boolean): Promise<Beat> => {
+  const generateBeat = async (history: ComicFace[], isRightPage: boolean, pageNum: number, isDecisionPage: boolean, isRegeneration: boolean = false): Promise<Beat> => {
     if (!heroRef.current) throw new Error("No Hero");
 
     const isFinalPage = pageNum === MAX_STORY_PAGES;
@@ -135,10 +135,34 @@ const App: React.FC = () => {
     3. Avoid "The artifact" or "The device" unless established earlier.
     `;
 
+    // Future Context for Regeneration Mode
+    let futureContext = "";
+    if (isRegeneration) {
+        const futurePages = history
+            .filter(p => p.type === 'story' && p.narrative && (p.pageIndex || 0) > pageNum)
+            .sort((a, b) => (a.pageIndex || 0) - (b.pageIndex || 0))
+            .slice(0, 3); // Only look at next 3 pages to avoid information overload
+        
+        if (futurePages.length > 0) {
+            const futureText = futurePages.map(p => 
+                `[Page ${p.pageIndex}] Scene: ${p.narrative?.scene}`
+            ).join('\n');
+            
+            futureContext = `\n\n🔄 REGENERATION MODE - CRITICAL INSTRUCTIONS:\nYou are REGENERATING page ${pageNum}. The following pages have ALREADY been generated and CANNOT be changed:\n${futureText}\n\nYour content for page ${pageNum} MUST:\n1. Create a smooth narrative bridge from page ${pageNum - 1} to these future events\n2. Introduce elements, characters, or situations that logically lead to what happens next\n3. Maintain consistency with the established future storyline\n4. Ensure the transition feels natural and inevitable, not forced`;
+            
+            console.log(`🔄 Regenerating page ${pageNum} with ${futurePages.length} future pages as context`);
+        }
+    }
+
     // BASE INSTRUCTION: Strictly enforce language for output text.
     let instruction = `Continue the story. ALL OUTPUT TEXT (Captions, Dialogue, Choices) MUST BE IN ${langName.toUpperCase()}. ${coreDriver} ${guardrails}`;
     if (richMode) {
         instruction += " RICH/NOVEL MODE ENABLED. Prioritize deeper character thoughts, descriptive captions, and meaningful dialogue exchanges over short punchlines.";
+    }
+    
+    // Add future context for regeneration mode
+    if (futureContext) {
+        instruction += futureContext;
     }
 
     if (isFinalPage) {
@@ -266,7 +290,7 @@ const App: React.FC = () => {
       if (idx !== -1) historyRef.current[idx] = { ...historyRef.current[idx], ...updates };
   };
 
-  const generateSinglePage = async (faceId: string, pageNum: number, type: ComicFace['type']) => {
+  const generateSinglePage = async (faceId: string, pageNum: number, type: ComicFace['type'], isRegeneration: boolean = false) => {
       const isDecision = DECISION_PAGES.includes(pageNum);
       let beat: Beat = { scene: "", choices: [], focus_char: 'other' };
 
@@ -275,7 +299,7 @@ const App: React.FC = () => {
       } else if (type === 'back_cover') {
            beat = { scene: "Thematic teaser image", choices: [], focus_char: 'other' };
       } else {
-           beat = await generateBeat(historyRef.current, pageNum % 2 === 0, pageNum, isDecision);
+           beat = await generateBeat(historyRef.current, pageNum % 2 === 0, pageNum, isDecision, isRegeneration);
       }
 
       if (beat.focus_char === 'friend' && !friendRef.current && type === 'story') {
@@ -382,7 +406,7 @@ const App: React.FC = () => {
       generatingPages.current.add(pageIndex);
       
       try {
-          await generateSinglePage(faceId, pageIndex, type);
+          await generateSinglePage(faceId, pageIndex, type, true); // Pass isRegeneration=true
       } finally {
           generatingPages.current.delete(pageIndex);
       }
